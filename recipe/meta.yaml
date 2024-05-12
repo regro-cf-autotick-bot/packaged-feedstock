@@ -1,5 +1,5 @@
 {% set name = "packaged" %}
-{% set version = "0.2.0" %}
+{% set version = "0.3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/packaged-{{ version }}.tar.gz
-  sha256: 4a4387dcf5a0fd7ed6ea740f07fc0288d3f737fa008330c3ace764e5bc760adf
+  sha256: 0c9a31b921c66d313e7c1c759d9a275b43238af6000ded911cde5cc5e9eaf196
 
 build:
   entry_points:
