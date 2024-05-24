@@ -1,5 +1,5 @@
 {% set name = "packaged" %}
-{% set version = "0.5.0" %}
+{% set version = "0.5.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/packaged-{{ version }}.tar.gz
-  sha256: 6c90d81373ff376b74b3b06ec6f4b1fa77191345b37385429c4f737d1b751fbf
+  sha256: 1fe7da9b2cb892091e5bb11329b5384f8c4659f56f73bddfba045fc1ba0b1401
 
 build:
   entry_points:
@@ -21,6 +21,7 @@ requirements:
     - python >=3.8
     - pip
   run:
+    - yaspin >=2.5.0
     - python >=3.8
     - yen >=0.4.2
 
