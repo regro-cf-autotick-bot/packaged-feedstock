@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/packaged-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/packaged-{{ version }}.tar.gz
   sha256: 6c90d81373ff376b74b3b06ec6f4b1fa77191345b37385429c4f737d1b751fbf
 
 build:
@@ -14,14 +14,14 @@ build:
     - packaged=packaged.cli:cli
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - yen >=0.4.2
 
 test:
@@ -32,6 +32,7 @@ test:
     - packaged --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/tusharsadhwani/packaged
